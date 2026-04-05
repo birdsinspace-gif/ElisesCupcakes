@@ -1,6 +1,8 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+'use client';
 
-export default function App() {
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+export default function Page() {
   const { scrollY } = useScroll();
 
   const heroImageY = useTransform(scrollY, [0, 700], [0, 140]);
@@ -8,64 +10,57 @@ export default function App() {
 
   const offerings = [
     {
-      title: "Celebration Cupcakes",
-      body: "Elegant cupcakes for birthdays, showers, parties, and meaningful family moments."
+      title: 'Celebration Cupcakes',
+      body: 'Elegant cupcakes for birthdays, showers, parties, and meaningful family moments.',
     },
     {
-      title: "Custom Design Orders",
-      body: "Color-led, flower-inspired frosting work tailored to your event palette and mood."
+      title: 'Custom Design Orders',
+      body: 'Color-led, flower-inspired frosting work tailored to your event palette and mood.',
     },
     {
-      title: "Boutique Presentation",
-      body: "Designed to feel giftable, polished, and beautiful on arrival."
+      title: 'Boutique Presentation',
+      body: 'Designed to feel giftable, polished, and beautiful on arrival.',
     },
     {
-      title: "Small Batch Quality",
-      body: "Carefully made in limited runs so every order feels personal and intentional."
-    }
+      title: 'Small Batch Quality',
+      body: 'Carefully made in limited runs so every order feels personal and intentional.',
+    },
   ];
 
   const occasions = [
-    "Baby showers",
-    "Birthdays",
-    "Church events",
-    "Bridal celebrations",
-    "Tea parties",
-    "Client gifts"
+    'Baby showers',
+    'Birthdays',
+    'Church events',
+    'Bridal celebrations',
+    'Tea parties',
+    'Client gifts',
   ];
 
   const processSteps = [
     {
-      number: "01",
-      title: "Choose your date",
-      body: "Start with the occasion, guest count, and delivery or pickup timeline."
+      number: '01',
+      title: 'Choose your date',
+      body: 'Start with the occasion, guest count, and delivery or pickup timeline.',
     },
     {
-      number: "02",
-      title: "Select your style",
-      body: "Pick a frosting look, color palette, and presentation style that fits the event."
+      number: '02',
+      title: 'Select your style',
+      body: 'Pick a frosting look, color palette, and presentation style that fits the event.',
     },
     {
-      number: "03",
-      title: "Confirm your order",
-      body: "Finalize flavors, quantities, and details with a simple, personal ordering process."
+      number: '03',
+      title: 'Confirm your order',
+      body: 'Finalize flavors, quantities, and details with a simple, personal ordering process.',
     },
     {
-      number: "04",
-      title: "Serve beautifully",
-      body: "Receive cupcakes that feel joyful, polished, and ready for the table."
-    }
+      number: '04',
+      title: 'Serve beautifully',
+      body: 'Receive cupcakes that feel joyful, polished, and ready for the table.',
+    },
   ];
 
-  const sectionFade = {
-    initial: { opacity: 0, y: 28 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration: 0.7 }
-  } as const;
-
   return (
-    <div className="min-h-screen bg-[#fff8fb] text-[#241c23]">
+    <main className="min-h-screen bg-[#fff8fb] text-[#241c23]">
       <section className="relative min-h-[95vh] overflow-hidden">
         <motion.div
           style={{ y: heroImageY }}
@@ -75,7 +70,7 @@ export default function App() {
             className="h-full w-full"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(24,16,22,0.35), rgba(24,16,22,0.68)), url('/IMG_6239.JPG')"
+                "linear-gradient(rgba(24,16,22,0.35), rgba(24,16,22,0.68)), url('/IMG_6239.JPG')",
             }}
           />
         </motion.div>
@@ -90,7 +85,7 @@ export default function App() {
               transition={{ duration: 0.55 }}
               className="text-sm uppercase tracking-[0.32em] text-[#f8d9e8]"
             >
-              Elise's Cupcakes
+              Elise&apos;s Cupcakes
             </motion.p>
 
             <motion.h1
@@ -159,10 +154,7 @@ export default function App() {
         </div>
       </section>
 
-      <motion.section
-        {...sectionFade}
-        className="mx-auto max-w-7xl px-6 py-24 md:px-10"
-      >
+      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#8e7a87]">
@@ -182,12 +174,9 @@ export default function App() {
             </p>
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        {...sectionFade}
-        className="overflow-hidden border-y border-[#f0dce7] bg-[#fdf4f8]"
-      >
+      <section className="overflow-hidden border-y border-[#f0dce7] bg-[#fdf4f8]">
         <div className="mx-auto grid max-w-7xl gap-0 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="px-6 py-24 md:px-10">
             <div className="max-w-3xl">
@@ -221,18 +210,14 @@ export default function App() {
               className="h-full w-full bg-cover bg-center"
               style={{
                 backgroundImage:
-                  "linear-gradient(rgba(36,28,35,0.10), rgba(36,28,35,0.24)), url('/IMG_6237.JPG')"
+                  "linear-gradient(rgba(36,28,35,0.10), rgba(36,28,35,0.24)), url('/IMG_6237.JPG')",
               }}
             />
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        id="gallery"
-        {...sectionFade}
-        className="mx-auto max-w-7xl px-6 py-24 md:px-10"
-      >
+      <section id="gallery" className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#8e7a87]">
             Gallery
@@ -243,7 +228,7 @@ export default function App() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {["/IMG_6233.JPG", "/IMG_6234.JPG", "/IMG_6235.JPG"].map((src, i) => (
+          {['/IMG_6233.JPG', '/IMG_6234.JPG', '/IMG_6235.JPG'].map((src, i) => (
             <motion.div
               key={src}
               initial={{ opacity: 0, y: 24 }}
@@ -256,19 +241,16 @@ export default function App() {
             </motion.div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        {...sectionFade}
-        className="overflow-hidden border-y border-[#f0dce7] bg-[#f3f9ff]"
-      >
+      <section className="overflow-hidden border-y border-[#f0dce7] bg-[#f3f9ff]">
         <div className="mx-auto grid max-w-7xl gap-0 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="min-h-[460px] lg:min-h-full">
             <div
               className="h-full w-full bg-cover bg-center"
               style={{
                 backgroundImage:
-                  "linear-gradient(rgba(24,20,28,0.12), rgba(24,20,28,0.24)), url('/IMG_6238.JPG')"
+                  "linear-gradient(rgba(24,20,28,0.12), rgba(24,20,28,0.24)), url('/IMG_6238.JPG')",
               }}
             />
           </div>
@@ -299,12 +281,9 @@ export default function App() {
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        {...sectionFade}
-        className="mx-auto max-w-7xl px-6 py-24 md:px-10"
-      >
+      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#8e7a87]">
@@ -338,13 +317,9 @@ export default function App() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        id="order"
-        {...sectionFade}
-        className="bg-[#201a20] text-white"
-      >
+      <section id="order" className="bg-[#201a20] text-white">
         <div className="mx-auto max-w-6xl px-6 py-24 text-center md:px-10">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#e8bfd1]">
             Order inquiry
@@ -371,7 +346,7 @@ export default function App() {
             </a>
           </div>
         </div>
-      </motion.section>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -1,29 +1,16 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import './globals.css';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "CallCapture — Turn Missed Calls Into Captured Clients",
-  description:
-    "CallCapture instantly responds to missed inbound calls, captures caller information, and delivers qualified leads so you never lose another opportunity.",
-  openGraph: {
-    title: "CallCapture — Turn Missed Calls Into Captured Clients",
-    description:
-      "CallCapture instantly responds to missed inbound calls, captures caller information, and delivers qualified leads so you never lose another opportunity.",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "CallCapture — Turn Missed Calls Into Captured Clients",
-    description:
-      "CallCapture instantly responds to missed inbound calls, captures caller information, and delivers qualified leads so you never lose another opportunity.",
-  },
+  title: "Elise's Cupcakes",
+  description: 'Premium small-batch cupcakes for celebrations and special occasions.',
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body>{children}</body>
